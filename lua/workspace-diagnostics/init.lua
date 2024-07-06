@@ -98,7 +98,8 @@ local function _populate_workspace_diagnostics(client, bufnr)
       goto continue
     end
 
-    if not vim.tbl_contains(client.config.filetypes, filetype) then
+    local filetypes = client.config.filetypes
+    if filetypes and not vim.tbl_contains(filetypes, filetype) then
       goto continue
     end
 
